@@ -1,0 +1,260 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body{
+  width: 100%;
+  position: relative;
+  top:0;
+  left: 0;
+  background:#333;
+  padding-bottom: 100px;
+
+}
+
+.allseatcontainer{
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+}
+.allseats{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+
+
+.sidebar{
+  min-width: 180px;
+  height: 250px;
+  background:rgba(0, 0, 0, 0.233);
+  border: 1px solid rgba(255, 255, 255, 0.356);
+  display: flex;
+  position:fixed;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 10px ;
+}
+
+.sidebar .guide {
+  display: flex;
+  align-items: center;
+  margin:10px 0;
+  
+}
+
+
+.sidebar .guide .color{
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.sidebar .guide:nth-child(1) .color{
+  background-color: #7CD1B8;
+
+}
+
+.sidebar .guide:nth-child(2) .color{
+  background-color: #fffd8f;
+
+}
+
+.sidebar .guide:nth-child(3) .color{
+  background-color: #DD4a48;
+
+}
+
+.sidebar .guide:nth-child(4) .color{
+  background-color: #333;
+
+}
+
+.sidebar .guide .guideline{
+  color: #fff;
+
+  /* display: inline-block; */
+}
+
+.block{
+  width: 500px;
+  border: 1px solid rgba(247, 245, 245, 0.438);
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: 10px;
+  margin: 50px 0;
+  
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+
+}
+
+.seat{
+  width: 40px;
+  height: 20px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.315);
+  line-height: 20px;
+  color: #222;
+  text-shadow: 0 0  2px rgba(0, 0, 0, 0.657);
+  background: #777;
+
+}
+
+.selected{
+  position: relative;
+  top: 0;
+  /* left: 0; */
+  width: 500px;
+  
+  border: 1px solid rgba(247, 245, 245, 0.438);
+}
+.selected p{
+  font-weight: bold;
+}
+
+.selected div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.selected div span{
+  background: rgba(5, 5, 5, 0.438);
+  padding: 0 5px;
+  text-align: center;
+  border: 1px solid rgba(247, 245, 245, 0.438);
+}
+
+.model{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+ 
+  flex-direction: row;
+  width:100% ;
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translatex(-50%);
+  padding: 10px 0px;
+
+  background:rgba(255, 255, 255, 0.863);
+  animation: model 1s ease-in-out forwards;
+
+}
+@keyframes model{
+  0%{}
+  100%{bottom:10px}
+}
+.model h2{
+  color: #222;
+  font-size: 18px;
+  color: #777;
+  
+
+}
+
+.model button{
+  padding: 5px 10px;
+  background: rgb(73, 168, 73);
+  border-radius: 10px 15px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.719);
+}
+
+.cards{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.card{
+  width: 400px;
+  height: 450px;
+  padding: 10px;
+  margin: 20px;
+}
+.card button{
+  background: rgb(73, 168, 73);
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  padding: 5px 30px;
+  border-radius: 10px 15px;
+
+
+}
+.card p{
+  margin: 20px 0;
+}
+.timer{
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+}
+.timer p{
+  margin: 0;
+  font-weight: bold;
+  /* font-kerning: ; */
+}
+
+.timer::before,.timer::after{
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  background: #ccc;
+}
+.timer::before{
+  left: -10px;
+
+}
+.timer::after{
+  right: -10px;
+
+}
+.timer .time{
+  width: 100%;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+  color: #222;
+}
